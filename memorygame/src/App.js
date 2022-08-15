@@ -8,6 +8,8 @@ import Items from "./components/Items";
 
 function App() {
 
+  
+
   const [counter, setCounter] = useState(0)
   const [bestCounter, setBestCounter] = useState(0)
   const [chosenList, setChosenList] = useState([])
@@ -27,6 +29,10 @@ function App() {
     if (chosenList.includes(id)) {
       alert("you lost")
       setChosenList([])
+      if (counter>bestCounter) {
+        setBestCounter(counter)
+        
+      }
     }
     else{
       setChosenList(chosenList.concat(id))

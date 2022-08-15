@@ -1,10 +1,18 @@
 import React from 'react'
 
-const EachItem = ({id,title,link, modifyList}) => {
+const EachItem = ({id,title,link, modifyList, randomlist}) => {
+
+const theClick = () =>{
+    
+    modifyList(id)
+    randomlist()
+
+}
+
   return (
-    <div className='card' onClick={()=> modifyList(id)} >
+    <div className='card' onClick={()=> theClick() } >
         <img src={link} className="pics"></img>
-        <div>{title}</div>
+        <div className='text'>{title}</div>
     </div>
   )
 }
